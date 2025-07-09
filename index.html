@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta para Eve 💌</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
+
+    .envelope {
+      width: 320px;
+      height: 200px;
+      position: relative;
+      cursor: pointer;
+      perspective: 1000px;
+      margin-top: 40px;
+    }
+
+    .flap {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #00ffcc;
+      transform-origin: top;
+      transition: transform 1s;
+      z-index: 3;
+      clip-path: polygon(0 0, 100% 0, 50% 50%);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .body {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #00aa88;
+      z-index: 2;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .letter {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      background: #ffffff;
+      top: 160px;
+      left: 0;
+      transition: top 1s, opacity 0.5s, z-index 0s 1s;
+      z-index: 0;
+      opacity: 0;
+      padding: 20px;
+      color: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(-180deg);
+    }
+
+    .envelope.open .letter {
+      top: -100px;
+      z-index: 5;
+      opacity: 1;
+      transition: top 1s, opacity 0.5s, z-index 0s;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #00aa88;
+      font-size: 1.6rem;
+    }
+
+    .signature {
+      margin-top: 2rem;
+      text-align: right;
+      font-style: italic;
+      color: #555;
+    }
+
+    .terminal {
+      background: #000;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      .envelope {
+        width: 100%;
+        height: 65vw;
+      }
+
+      .letter {
+        font-size: 1.1rem;
+        padding: 24px;
+        top: 140px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .terminal {
+        font-size: 1rem;
+      }
+    }
+
+
+
+.instruccion {
+  color: #00ffcc;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  animation: blink 2s infinite;
+  text-align: center;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+  </style>
+</head>
+<body>
+<div class="instruccion">✅ Toca el sobre</div>
+  <div class="envelope" onclick="this.classList.toggle('open')">
+    <div class="flap"></div>
+    <div class="body"></div>
+    <div class="letter">
+      <h1>Hola Eve 🌟</h1>
+      <p>
+        Esto no es un error de sistema, es un mensaje directo desde mi pc 💻.
+      </p>
+      <p>
+        Quería contarte algo importante sobre la <strong>Mac</strong>:
+      </p>
+      <div class="terminal">
+        $ cat verdad_mac.txt<br>
+       → Recuerdas que te dije que habia pasado una situaciòn con la mac pero todo estaba bajo control. 😅<br><br>
+        → Tal vez no te lo dije en su momento por pena o miedo a como fueras a reaccionar.<br><br>
+        → Bueno ,la lap que adquiriste con tu tio, tuvo un pequeño problema,tenia cuenta de icloud vinculada y al conectarla a internet se bloqueo, por que tenia reporte de robo.<br><br>
+     
+        → Entonces me di a la tarea de adquirir otra de uso, que es la que actualmente tienes, sabes yo te la obsequie por que te vi ilusionada ,
+         vi que realmente tienes el deseo de salir adelante y pues tu sabes que tu eres alguien especial para mi.
+          Tomala como un obsequio de graduaciòn de mi parte.<br><br>
+        → Y con esto no quiero que te sientas comprometida conmigo ,yo lo hice por que me nacio regalartela,tampo busco presumir y mucho menos que te sienta incomoda o mal.<br><br>
+        
+         → Espero no me lo tomes a mal y  que lo que te estoy diciendo no cambie nada, al contrario que refuerse las convivencias,la confianza etc. (En las cuales me la he pasado muy bien).<br><br><br>
+          →SOLO VOY A PEDIRTE 4 COSAS<br><br>
+            →APROVECHALA AL MAXIMO Y CUIDALA MUCHO.<br><br>
+            →NO OLVIDES DE DONDE PROVINO.<br><br>
+            →QUE QUEDE ENTRE NOSOTROS (no quiero que se den malas interpretaciones)<br><br>
+            →Y TU OPINIÒN <br><br>
+      </div>
+      <p>
+        Gracias por siempre ser tú. Esto lo hice con cariño y honestidad.
+      </p>
+      <p class="signature">
+       ISC Luis Andres 👨‍💻
+      </p>
+    </div>
+  </div>
+</body>
+</html>
